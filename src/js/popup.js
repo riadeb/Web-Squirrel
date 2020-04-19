@@ -31,7 +31,9 @@ function save_session(){ //Save new session from checked items
     });
     var name = document.getElementById("session_name").value;
     var session = {name:name,session:session_to_save}
-    if (saved_sessions.length === 0) {saved_sessions[0] = session;}
+    if (!saved_sessions || saved_sessions.length === 0) {
+        saved_sessions = [];
+        saved_sessions.push(session);}
     else{ saved_sessions.push(session); }
     document.getElementById("session_name").value = "";
     alert("Session "+name + "has been saved");
@@ -88,20 +90,23 @@ function delete_session() {
 }
 function update_list(sess_ind_toset_toactive) { //adds new session to the list of existing saved session
     document.getElementById("saved_sessions").innerHTML = "";
-        saved_sessions.forEach(function (value,index,arr) {
-            if(value == null){ return; }
+    if(saved_sessions) {
+
+
+        saved_sessions.forEach(function (value, index, arr) {
+            if (value == null) {
+                return;
+            }
             var div_el = document.createElement('div');
             if (sess_ind_toset_toactive === undefined || sess_ind_toset_toactive === null) {
 
-                div_el.innerHTML = '<button type="button" class="list-group-item list-group-item-action saved_session" id='+index+'>'+value.name + '</button>'
-            }
-            else{
+                div_el.innerHTML = '<button type="button" class="list-group-item list-group-item-action saved_session" id=' + index + '>' + value.name + '</button>'
+            } else {
 
-                if (sess_ind_toset_toactive == index){
-                    div_el.innerHTML = '<button type="button" class="list-group-item list-group-item-action saved_session active" id='+index+'>'+value.name + '</button>'
-                }
-                else{
-                    div_el.innerHTML = '<button type="button" class="list-group-item list-group-item-action saved_session" id='+index+'>'+value.name + '</button>'
+                if (sess_ind_toset_toactive == index) {
+                    div_el.innerHTML = '<button type="button" class="list-group-item list-group-item-action saved_session active" id=' + index + '>' + value.name + '</button>'
+                } else {
+                    div_el.innerHTML = '<button type="button" class="list-group-item list-group-item-action saved_session" id=' + index + '>' + value.name + '</button>'
 
                 }
             }
@@ -109,6 +114,7 @@ function update_list(sess_ind_toset_toactive) { //adds new session to the list o
 
 
         })
+    }
     if (!(sess_ind_toset_toactive === undefined || sess_ind_toset_toactive === null)){
         updatetab(sess_ind_toset_toactive);
     }
@@ -188,6 +194,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     chrome.storage.local.get(['saved_tabs'], function(result) {
         saved_sessions = result.saved_tabs ;
+        if(saved_sessions === null) saved_sessions = [];
         update_list();
     });
     document.getElementById("open_button").addEventListener('click',open_session)
