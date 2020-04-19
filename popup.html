@@ -1,0 +1,79 @@
+<html>
+<head>
+    <script src="src/js/jquery-3.4.1.min.js"></script>
+
+    <script src="src/js/popup.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/css/bootstrap.min.css" integrity="sha384-SI27wrMjH3ZZ89r4o+fGIJtnzkAnFs3E4qz9DIYioCQ5l9Rd/7UAa8DHcaL8jkWt" crossorigin="anonymous">
+
+    <style>
+body {
+width:600px;
+    height:max-content;
+}
+
+</style>
+    <link rel="stylesheet" href="src/css/style.css">
+</head>
+<body>
+<nav class="navbar" style=" background-color: rgba(238, 232, 188, 1); ">
+    <ul class="nav" id="myTab" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active" id="new-tab" data-toggle="tab" href="#newsession" role="tab" aria-controls="home" aria-selected="true">New Session</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="edit-tab" data-toggle="tab" href="#editsessions" role="tab" aria-controls="profile" aria-selected="false">Saved sessions</a>
+        </li>
+    </ul>
+    <img src="src/img/logo_web_squirrel_brown.gif" class="navbar-brand mr-0 mr-md-2" width="240px"></img>
+
+</nav>
+<div class="container-fluid" style="padding-top: 10px;">
+            <div id="edit_session"  style="display: none">
+                <div class="row">
+                <div class="col-4">
+                    <p class="font-weight-bold">Saved sessions :</p>
+                    <ul class="list-group" id="saved_sessions">
+
+                    </ul>
+
+                </div>
+            <div class="col-8">
+                <div id="desc_sess">
+                <p class="font-weight-bold">Edit session : <span id="session_name_to_edt"></span></p>
+                <p>You can select tabs you want to open as new tabs</p>
+                </div>
+
+                <div class="form-group form-check">
+                    <ul class="list-group list-group-flush" id="editlist">
+                    </ul> </div>
+                <button class="btn btn-primary" id="delete_session" style="float: right;margin-left: 10px;">Delete session</button>
+                <button class="btn btn-primary" id="open_button" style="float: right">Open tabs</button>
+            </div>
+                </div>
+            </div>
+            <div id="add_session" class="col-8">
+
+    <p class="font-weight-bold">Add new session :</p>
+
+    <p>You can select tabs you want to save in a new session</p>
+
+    <hr>
+        <div class="form-group form-check">
+    <ul class="list-group list-group-flush" id="openlist">
+    </ul> </div>
+        <div class="form-group">
+            <label for="name">Session's name:</label>
+            <input type="text" class="form-control" placeholder="Name" id="session_name">
+
+        </div>
+                <div class="form-group">
+                <button class="btn btn-primary" id="save_button">Save Session</button>
+                </div>
+            </div>
+
+
+
+</div>
+
+</body>
+</html>

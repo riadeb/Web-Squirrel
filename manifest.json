@@ -1,0 +1,40 @@
+{
+  "manifest_version": 2,
+  "name": "Web Squirrel : Session Manager",
+  "description": "Save and manage your open tabs with one click",
+  "version": "1",
+	
+	"content_scripts": [
+  {
+    "matches": [
+      "<all_urls>"
+    ],
+    "js": ["src/js/jquery-3.4.1.min.js"]
+  }
+],
+"browser_action": {
+      "default_popup": "popup.html",
+      "default_icon" : {
+        "36": "src/img/noisette36.png",
+        "16": "src/img/noisette16.png",
+        "48": "src/img/noisette48.png",
+        "128": "src/img/noisette128.png"
+      }
+},
+
+  "icons" : {
+    "36": "src/img/noisette36.png",
+    "16": "src/img/noisette16.png",
+    "48": "src/img/noisette48.png",
+    "128": "src/img/noisette128.png"
+  },
+
+
+"background": {
+  "scripts": ["src/js/jquery-3.4.1.min.js"]
+},
+ "permissions": [
+          "tabs","storage"
+        ]
+
+}

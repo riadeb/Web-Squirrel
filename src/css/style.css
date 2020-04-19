@@ -1,0 +1,89 @@
+.btn-primary {
+    background-color: rgba(238, 232, 188, 1);
+    color:#55361C;
+    border-color: rgb(232, 201, 174);;
+}
+.btn-primary:hover {
+    color: #fff;
+    background-color: orange;
+    border-color: #efefef;
+}
+.btn-primary.focus, .btn-primary:focus {
+    color: #fff;
+    background-color: orange;
+    border-color: #efefef;
+}
+#openlist {
+    overflow-y: scroll;
+    max-height: 230PX;
+}
+#editlist {
+    overflow-y: scroll;
+    height: 250px;
+    max-height: 250PX;
+
+}
+html {
+    height: fit-content;
+}
+#delete_session{
+    opacity: 0.4;
+}
+#delete_session:hover{
+    background-color: red;
+}
+#edit_session{
+    padding-bottom: 20px;
+}
+#saved_sessions {
+    overflow-y: scroll;
+    max-height: 300PX;
+}
+
+.list-group-item {
+    background-color:35363a;  /* #55361C */;
+}
+
+body {
+    background-color: 35363a;  /* #55361C */;
+    color:wheat;
+}
+.nav-item a {
+    color:#55361C;
+}
+.nav-item .active {
+   font-weight: 700;
+}
+.list-group-item-action {
+
+    color: wheat;
+}
+.list-group-item.active {
+    color: #55361C;
+    background-color: rgba(238, 232, 188, 1);
+    border-color:  rgba(238, 232, 188, 1); }
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: wheat;
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: orange;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+.custom-control-input:checked~.custom-control-label::before {
+    border-color: orange;
+    background-color: orange;
+}
